@@ -18,7 +18,6 @@ mongoose.connection.on("open", async()=>{
     await AnimalModel.create(scrubbedData)
     mongoose.connection.close()
 
-
+    // console.log(scrubbedData[0]);
 })
 
-console.log(scrubbedData[0]);
