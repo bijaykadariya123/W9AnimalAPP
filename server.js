@@ -1,9 +1,15 @@
 require("dotenv").config()
 const express = require("express")
-// const morgan = require("morgan")
+const morgan = require("morgan")
 const animalRoutes = require("./controllers/animalRoutes.js")
 const app = express()
-app.use(animalRoutes)
+
+//middleware
+app.use(express.urlencoded())// allows the req.body to be read from the form
+app.use(morgan("dev"))
+
+//Routes
+app.use("/animal", animalRoutes)
 
 
 
@@ -11,5 +17,5 @@ app.use(animalRoutes)
 
 
 app.listen(process.env.PORT, ()=>{
-    console.log(` PORT ${process.env.URL} is Running`);
+    console.log(` PORT ${process.env.PORT} is Running`);
 })
