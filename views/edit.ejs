@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <%- include("imports.ejs")%>
 </head>
 <body>
-    <form method="POST" action="/animal/<%= oneAnimal%>?_method=PUT">
-        <h2>Create new animal</h2>
-        <label>Species: <br><input type="text" name="species" value="<%=animal.species%>"  /></label><br>
-        <label>Location: <br><input type="text" name="location"value="<%=animal.location%>" /></label><br>
-        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=animal.lifeExpectancy%>" /></label><br>
-        <label> Extinct: <input type="checkbox" name="extinct" value="<%= animal.extinct %>" /></label><br>
-        <input type="submit"  value="Add animal"/>
+    <h2>Edit a Page</h2>
+    <h2> Edit <%= oneAnimal.species%> </h2>
+    <form method="post" action="/animal/<%= oneAnimal%>?_method=PUT">
+        <label>Species: <br><input type="text" name="species" value="<%=oneAnimal.species%>"  /></label><br>
+        <label>Location: <br><input type="text" name="location"value="<%=oneAnimal.location%>" /></label><br>
+        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=oneAnimal.lifeExpectancy%>" /></label><br>
+        <label> Extinct: <input type="checkbox" name="extinct" <%= oneAnimal.extinct ? "checked": "" %> /></label><br>
+        <input type="submit"  value="edit"/>
     </form>
     
 </body>

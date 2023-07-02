@@ -10,7 +10,7 @@ mongoose.connection.on("open", async()=>{
             species: v.species,
             extinct: v.extinct,
             location: v.location,
-            lifeExpectancy:v.lifeExpectancy
+            lifeExpectancy: v.lifeExpectancy
     
         }
     })
