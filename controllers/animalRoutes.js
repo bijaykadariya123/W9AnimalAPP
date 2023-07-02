@@ -27,7 +27,7 @@ router.put('/:id', async (req, res) => {
     const id = req.params.id;
     req.body.extinct = req.body.extinct === 'on' ? true : false;
     const oneAnimal = await AnimalModel.findByIdAndUpdate(id, req.body);
-    res.redirect('/animal',{oneAnimal})
+    res.redirect('/animal')
 })
 ///////////////////////////////////////////////////////////////////////////////////////CREATE
 router.post('/', async (req, res) => {

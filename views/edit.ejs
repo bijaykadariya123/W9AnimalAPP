@@ -10,12 +10,12 @@
 <body>
     <h2>Edit a Page</h2>
     <h2> Edit <%= oneAnimal.species%> </h2>
-    <form method="post" action="/animal/<%= oneAnimal%>?_method=PUT">
+    <form method="post" action="/animal/<%= oneAnimal._id%>?_method=PUT">
         <label>Species: <br><input type="text" name="species" value="<%=oneAnimal.species%>"  /></label><br>
         <label>Location: <br><input type="text" name="location"value="<%=oneAnimal.location%>" /></label><br>
         <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=oneAnimal.lifeExpectancy%>" /></label><br>
-        <label> Extinct: <input type="checkbox" name="extinct" <%= oneAnimal.extinct ? "checked": "" %> /></label><br>
-        <input type="submit"  value="edit"/>
+        <label> Extinct: <input type="checkbox" name="extinct" <%=oneAnimal.extinct ? "checked": "" %> /></label><br>
+        <input type="submit"  value="Edit"/>
     </form>
     
 </body>
