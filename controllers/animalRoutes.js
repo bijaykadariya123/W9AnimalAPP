@@ -19,7 +19,7 @@ router.get("/new", (req, res)=>{
 router.delete('/:id', async (req, res) => {
     const id = req.params.id;
     const oneAnimal = await AnimalModel.findByIdAndDelete(id, req.body);
-    res.redirect('/animal', {oneAnimal, id})
+    res.redirect('/animal')
 })
 
 /////////////////////////////////////////////////////////////////////////////////////UPDATE
@@ -27,7 +27,7 @@ router.put('/:id', async (req, res) => {
     const id = req.params.id;
     req.body.extinct = req.body.extinct === 'on' ? true : false;
     const oneAnimal = await AnimalModel.findByIdAndUpdate(id, req.body);
-    res.redirect('/animal')
+    res.redirect('/animal',{oneAnimal})
 })
 ///////////////////////////////////////////////////////////////////////////////////////CREATE
 router.post('/', async (req, res) => {
