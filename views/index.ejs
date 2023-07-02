@@ -23,6 +23,7 @@
 </head>
 <body>
     <div>
+        <a href="/animal/new"><button>Create animal</button></a>
         <ul><span style="font-size: 30px; background-color: black; color:white">List of Animals</span>
          <% allAnimals.forEach((animal, index)=>{%>
           <a href="/animal/<%= animal._id%>"><h3>Name: <%= animal.species%></h3></a>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/animal/<%= oneAnimal%>?_method=PUT">
+        <h2>Create new animal</h2>
+        <label>Species: <br><input type="text" name="species" value="<%=animal.species%>"  /></label><br>
+        <label>Location: <br><input type="text" name="location"value="<%=animal.location%>" /></label><br>
+        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=animal.lifeExpectancy%>" /></label><br>
+        <label> Extinct: <input type="checkbox" name="extinct" value="<%= animal.extinct %>" /></label><br>
+        <input type="submit"  value="Add animal"/>
+    </form>
+    
+</body>
+</html>

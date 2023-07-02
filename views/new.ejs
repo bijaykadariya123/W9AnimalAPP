@@ -7,16 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 style="color:rgb(0, 0, 255)">Create a New Animal</h1>
+    <h1 >Create a New Animal</h1>
     <a href="/animal"><button class="mainPageButton">Main Page</button></a>
-    <form action="/fruit" method="post">
-        <fieldset>
-            <legend>Create a new fruit</legend>
-            <label>Name: <input type="text" name="name" placeholder="enter fruit name"/></label>
-            <label>Color: <input type="text" name="color" placeholder="enter fruit color"/></label>
-            <label>Ready to eat: <input type="checkbox" name="readyToEat"/></label>
-            <input type="submit" value="create new fruit"/>
-        </fieldset>
+    <form method="post" action="/animal" >
+        <label>Species: <br><input type="text" name="species" /></label><br>
+        <label>Location: <br><input type="text" name="location" /></label><br>
+        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" /></label><br>
+        <label> Extinct: <input type="checkbox" name="extinct" /></label><br>
+        <input type="submit"  value="Add animal"/>
     </form>
     
 </body>
