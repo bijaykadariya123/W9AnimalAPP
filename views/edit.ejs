@@ -6,17 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include("imports.ejs")%>
+    <style>
+        label{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        label>input{
+            padding:0.3rem;
+            width: 12rem;
+        }
+        .submits{
+        /* width: 3.74rem; */
+        font-size: 1.2rem;
+        display: block;
+        
+        }
+        .main{
+            background-color: rgba(0, 0, 0, 0.5);
+            width:18rem;
+            margin:0 auto;
+            color:white;
+            padding:1em;
+        }
+        a{
+            text-decoration: none;
+        }
+        .submits:hover{
+            background-color: black;
+            color:white;
+            cursor: pointer;
+        }
+        
+    </style>
 </head>
 <body>
-    <h2>Edit a Page</h2>
-    <h2> Edit <%= oneAnimal.species%> </h2>
-    <form method="post" action="/animal/<%= oneAnimal._id%>?_method=PUT">
-        <label>Species: <br><input type="text" name="species" value="<%=oneAnimal.species%>"  /></label><br>
-        <label>Location: <br><input type="text" name="location"value="<%=oneAnimal.location%>" /></label><br>
-        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=oneAnimal.lifeExpectancy%>" /></label><br>
-        <label> Extinct: <input type="checkbox" name="extinct" <%=oneAnimal.extinct ? "checked": "" %> /></label><br>
-        <input type="submit"  value="Edit"/>
-    </form>
+    <div class="main">
+        <h2>Edit Page</h2>
+        <form method="post" action="/animal/<%= oneAnimal._id%>?_method=PUT">
+            <label>Species: <br><input type="text" name="species" value="<%=oneAnimal.species%>"  /></label><br>
+            <label>Location: <br><input type="text" name="location"value="<%=oneAnimal.location%>" /></label><br>
+            <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" value="<%=oneAnimal.lifeExpectancy%>" /></label><br>
+            <label> Extinct: <input type="checkbox" name="extinct" <%=oneAnimal.extinct ? "checked": "" %> /></label><br>
+            <div style="display:inline-flex">
+                <input class="submits"type="submit"  value="Edit"/>
+                <a href="/animal"><button class="submits">Home Page</button></a>
+            </div>
+        </form>
+    </div>
     
 </body>
 </html>

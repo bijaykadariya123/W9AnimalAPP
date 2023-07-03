@@ -6,18 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include("imports.ejs")%>
+    <style>
+        h1{
+            display: block;
+            text-align: center;
+        }
+        .main{
+            background-color: rgba(0, 0, 0, 0.5);
+            width:18rem;
+            margin:0 auto;
+            color:white;
+            padding:1em;
+        }
+        .submits{
+
+        font-size: 1.2rem;
+        display: inline-block;
+        margin-top:0.5rem;
+        
+        }
+        label{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        label>input{
+            padding:0.3rem;
+            width: 12rem;
+        }
+        .submits:hover{
+            background-color: black;
+            color:white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1 >Create a New Animal</h1>
-    <a href="/animal"><button class="mainPageButton">Main Page</button></a>
-    <form method="post" action="/animal" >
-        <label>Species: <br><input type="text" name="species" /></label><br>
-        <label>Location: <br><input type="text" name="location" /></label><br>
-        <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" /></label><br>
-        <label> Extinct: <input type="checkbox" name="extinct" /></label><br>
-        <input type="submit"  value="Add Animal"/>
-    </form>
-    <a href="/animal"><button>Home Page</button></a>
+    <div class="main">
+        <form method="post" action="/animal" >
+            <label>Species: <br><input type="text" name="species" /></label><br>
+            <label>Location: <br><input type="text" name="location" /></label><br>
+            <label> LifeExpectancy: <br><input type="number" name="lifeExpectancy" /></label><br>
+            <label> Extinct: <input type="checkbox" name="extinct" /></label><br>
+            <div>
+                <input class= "submits" type="submit"  value="Add Animal"/>
+                <a href="/animal"><button class= "submits" >Home Page</button></a>
+            </div>
+        </form>
+        
+    </div>
     
 </body>
 </html>

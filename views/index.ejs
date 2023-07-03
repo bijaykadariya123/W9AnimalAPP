@@ -8,10 +8,16 @@
     <style>
         div{
             margin:0 auto;
+            background-color: rgba(0, 0, 0,0.5);
+            width: 20em;
+            height: auto;
+            padding: 2.3rem;
+          
         }
    
         a{
             text-decoration: none;
+           
         }
 
         h3:hover{
@@ -19,17 +25,38 @@
             color:red;
           cursor: pointer;
         }
+        button{
+            display: block;
+            margin:0 auto
+        }
+        ul{
+            width:15rem;
+            margin:0 auto;
+            
+
+        }
+        button{
+            margin-bottom: 1.2em;
+            font-size: larger;
+        }
+        button:hover{
+            background-color: rgba(0, 0, 0,0.3);
+            color:white;
+            cursor: pointer;
+        }
     </style>
     <%- include("imports.ejs")%>
 </head>
 <body>
     <div>
         <a href="/animal/new"><button>Create animal</button></a>
-        <ul><span style="font-size: 30px; background-color: black; color:white">List of Animals</span>
+       
+        <ul><span style="font-size: 30px; background-color: rgba(0, 0, 0,0.6); color:white; padding:8px">List of Animals</span>
          <% allAnimals.forEach((animal, index)=>{%>
           <a href="/animal/<%= animal._id%>"><h3>Name: <%= animal.species%></h3></a>
             <% })%>
         </ul>
+     
     </div>
 
     

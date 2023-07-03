@@ -6,24 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include("imports.ejs")%>
+    <style>
+        .main{
+            background-color: rgba(0, 0, 0, 0.5);
+            width:18rem;
+            margin:0 auto;
+            color:white;
+            padding:1em;
+        }
+        .buttons{
+            display: inline-flex;
+            padding:8px;
+            margin-left:2rem;
+        }
+        li{
+            list-style: none;
+            font-size: 1.5rem;
+            margin-bottom:1rem;
+        }
+        h2{
+            margin-left: 2.8rem;
+        }
+        button input{
+            font-size: 4rem;
+        }
+
+    </style>
 </head>
 <body>
-    <div>
-        <h2><%=oneAnimal.species %></h2>
+    <div class="main" >
+        <h2>Name: <%=oneAnimal.species %></h2>
         <ul>
-        <li><%=oneAnimal.location %></li>
-        <li><%=oneAnimal.extinct %></li>
-        <li><%=oneAnimal.lifeExpectancy %></li>
-         </ul>
-         <a href="/animal/<%= oneAnimal._id%>/edit"><button>Edit</button></a>
-         <form action="/animal/<%= oneAnimal._id %>?_method=DELETE" method="POST">
+            <li>Location: <%=oneAnimal.location %></li>
+            <li>Extinct: <%=oneAnimal.extinct %></li>
+            <li>LifeExpectancy: <%=oneAnimal.lifeExpectancy %></li>
+        </ul>
+        <div class="buttons">
+            <a href="/animal/<%= oneAnimal._id%>/edit"><button>Edit</button></a>
+            <form action="/animal/<%= oneAnimal._id %>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE"/>
-          </form>
-          <a href="/animal"><button>Home Page</button></a>
-
-
-        
-
+            </form>
+            <a href="/animal"><button>Home Page</button></a>
+        </div>   
     </div>
     
 </body>
